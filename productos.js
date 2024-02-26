@@ -5,7 +5,6 @@ let misProductos = [
         precio: 98000,
         img: "media/img-item/z1.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     },
     {
@@ -14,7 +13,6 @@ let misProductos = [
         precio: 110000,
         img: "media/img-item/z2.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     },
     {
@@ -23,7 +21,6 @@ let misProductos = [
         precio: 135000,
         img: "media/img-item/z3.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     },
     {
@@ -32,7 +29,6 @@ let misProductos = [
         precio: 88000,
         img: "media/img-item/z4.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     },
     {
@@ -41,7 +37,6 @@ let misProductos = [
         precio: 79000,
         img: "media/img-item/z5.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     },
     {
@@ -50,7 +45,6 @@ let misProductos = [
         precio: 240000,
         img: "media/img-item/z6.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     },
     {
@@ -59,7 +53,6 @@ let misProductos = [
         precio: 123000,
         img: "media/img-item/z7.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     },
     {
@@ -68,7 +61,6 @@ let misProductos = [
         precio: 95000,
         img: "media/img-item/z8.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     },
     {
@@ -77,7 +69,6 @@ let misProductos = [
         precio: 170000,
         img: "media/img-item/z9.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     },
     {
@@ -86,7 +77,6 @@ let misProductos = [
         precio: 168000,
         img: "media/img-item/z10.webp",
         cant: 1,
-        talle: [39,40,41,42,43,44],
         moneda: "$ARS"
     }
 

@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon">
+    <!-- CSS toastify-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- CSS Icon Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--  mi CSS-->
     <link rel="stylesheet" href="estilos/estilos.css">
     <title>Mi-Shop</title>
 </head>
@@ -14,28 +18,28 @@
 
     <header>
         <ul>
-            <li><i class="bi bi-cart icono-cart" id ="btnCart"></i></li>
+            <li><i class="bi bi-cart icono-cart" id="btnCart"></i></li>
             <li><img class="arg" width="50" height="50" src="https://img.icons8.com/color/48/argentina-circular.png"
                     alt="argentina-circular"></li>
             <li><img class="usa" width="50" height="50" src="https://img.icons8.com/fluency/48/usa-circular.png"
                     alt="usa-circular" /></li>
         </ul>
-    
+
     </header>
 
     <div class="contenedor-principal" id="contenedorPrincipal"></div>
-<!---->
+    <!---->
     <div class="modal-conteiner" id="modalConteiner">
         <div class="modal">
             <h1> Carrito </h1>
-                <div class="modal-productos" id="modalProductos">
-
-                </div>
-                <button class ="btn-modal" id="close">Cerrar</button>
+            <div class="modal-productos" id="modalProductos"></div>
+            <button class="btn-modal" id="close">Cerrar</button>
+            <button class="btn-pagar" id="pagar">Pagar</button>
         </div>
 
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="productos.js"></script>
     <script src="app.js"></script>
 </body>

@@ -107,6 +107,19 @@ li{
     cursor: pointer;
 }
 
+.btn-pagar{
+    background-color: var(--cobalt-blue);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: aliceblue;
+    font-size: 14px;
+    padding: 10px 25px;
+    cursor: pointer;
+    position: relative;
+    left: 410px;
+}
+
 .modal-conteiner{
     display: flex;
     background-color: rgba(0,0,0,0.3);
@@ -167,4 +180,8 @@ li{
 
 .modal-productos i:hover{
     color: var(--light-red)
+}
+
+.btn-pagar-ocultar{
+    display:none
 }
