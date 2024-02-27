@@ -170,7 +170,7 @@ function mostrarProductosDelCarrito() {
         let totalAPagar = document.querySelector(".total-container")
         let total = document.createElement("h3")
         total.className = "valor-total-modal"
-        total.innerText=acumulador
+        total.innerText=acumulador.toFixed(2)
         totalAPagar.appendChild(total)
     }
 }
