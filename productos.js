@@ -79,5 +79,4 @@ let misProductos = [
         cant: 1,
         moneda: "$ARS"
     }
-
 ]

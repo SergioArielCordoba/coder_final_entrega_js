@@ -38,8 +38,10 @@ function setCarritoToLocalStorage() {
 
 
 function cargarProductosAlIndex(arrayDeProductos) {
-
     let cantidad = 0
+    
+        
+
 
     arrayDeProductos.forEach((producto) => {
         let contenedorDeProducto = document.createElement("div")
@@ -49,21 +51,26 @@ function cargarProductosAlIndex(arrayDeProductos) {
             <img src="${producto.img}" alt="">
             <p class="contenedor-precio">${producto.precio} ${producto.moneda}</p>
             <div class="input-cant">
-                <label> Cantidad <input class="inputCantidad" type ="number" min=1></input> </label>
+                <label class="label-cantidad"> Cantidad  </label>
+                <input class="inputCantidad" type ="number" min=1></input>
             </div>
         `
-        let inputCantidad = document.querySelectorAll(".inputCantidad")
         
-        /**
-         * Input cantidad
-         */
-
-        inputCantidad.forEach(element => {
-            element.addEventListener("input",(e)=>{
-                cantidad = e.currentTarget.value
+        let inputCantidad = document.querySelectorAll(".inputCantidad")
+        for (const iterator of inputCantidad) {
+        iterator.addEventListener("input",(e)=>{
+            cantidad = e.target.value
             })
+        }
 
-        });
+        //input cantidad
+        
+        // inputCantidad.forEach(element => {
+        //     element.addEventListener("input",(e)=>{
+        //         cantidad = element.value //e.target.value
+        //     })
+
+        // });
 
         contenedorPrincipal.appendChild(contenedorDeProducto)
         let btnAddCart = document.createElement("button")
@@ -71,8 +78,6 @@ function cargarProductosAlIndex(arrayDeProductos) {
         btnAddCart.innerText = "Agregar al Carrito"
         contenedorDeProducto.appendChild(btnAddCart)
         btnAddCart.addEventListener("click", () => {
-
-////        
             if(cantidad == 0){
                 sweetAlert("Seleccione la cantidad", "error")
             }else{
@@ -80,9 +85,11 @@ function cargarProductosAlIndex(arrayDeProductos) {
                 let indice = carrito.findIndex((productoBuscado) => producto.id == productoBuscado.id)
                 if (indice > -1) {
                     carrito[indice].cant = carrito[indice].cant + parseInt(cantidad)
+                    
                 } else {
                     producto.cant = parseInt(cantidad)
-                    carrito.push(producto)   
+                    carrito.push(producto)
+                    
                 }
                 setCarritoToLocalStorage()
                 
@@ -102,7 +109,10 @@ function cargarProductosAlIndex(arrayDeProductos) {
         })
     })
 
+    
 }
+
+/*Se carga la pagina principal con productos, desde el archivo productos.js*/
 
 cargarProductosAlIndex(misProductos)
 
@@ -122,6 +132,9 @@ close.addEventListener("click", () => {
     while (modalProductos.firstChild) {
         modalProductos.removeChild(modalProductos.firstChild)
     }
+
+    let totalAPagar = document.querySelector(".valor-total-modal")
+    totalAPagar.remove()
 })
 
 function activarModal() {
@@ -131,6 +144,8 @@ function activarModal() {
 
 function mostrarProductosDelCarrito() {
     getCarritoFromLocalStorage()
+
+    let acumulador=0
 
     if(!carrito.length){
         modal.classList.remove("show")
@@ -147,10 +162,16 @@ function mostrarProductosDelCarrito() {
                 <i class="bi bi-trash-fill btnEliminar" id ="${item.id}"></i>
             `
             modalProductos.append(itemCarrito)
+            acumulador += (item.cant*item.precio)
         })
         modal.classList.add("show")
         eliminarProductoDelCarrito();
         pagar();
+        let totalAPagar = document.querySelector(".total-container")
+        let total = document.createElement("h3")
+        total.className = "valor-total-modal"
+        total.innerText=acumulador
+        totalAPagar.appendChild(total)
     }
 }
 
@@ -164,6 +185,8 @@ function eliminarProductoDelCarrito() {
             carrito.splice(indice, 1)
             let borrarProductosDelModal = document.querySelectorAll(".items-carrito")
             borrarProductosDelModal.forEach(x => x.remove())
+            let totalAPagar = document.querySelector(".valor-total-modal")
+            totalAPagar.remove()
             setCarritoToLocalStorage()
             mostrarProductosDelCarrito()
         })
@@ -217,7 +240,6 @@ btnArg.addEventListener("click", ()=>{
     }else{
         sweetAlert("Ya se encuentra en Peso","info")
     }
-
     flagDolar = 0
 })
 

@@ -65,7 +65,7 @@ body{
 }
 
 .icono-cart{
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 ul{
@@ -82,9 +82,7 @@ li{
 }
 
 
-.icono-cart{
-    position: relative
-}
+
 
 .cantidad-carrito{
     position: absolute;
@@ -184,4 +182,36 @@ li{
 
 .btn-pagar-ocultar{
     display:none
+}
+
+.inputCantidad{
+    width: 30px;
+    height: 20px;
+    background-color: var(--color-background);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.label-cantidad{
+    font-size: 1.5rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--orangey-yellow)
+}
+
+hr{
+    margin-bottom: 10px;
+}
+
+.total-container{
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 10px;
+}
+
+header{
+    background-image: url("../media/banner-interno-2024-zapatillas.png");
+    height: 12vh;
+    margin-bottom: 20px;
+    background-size:contain;
+    width: 100%;
 }
