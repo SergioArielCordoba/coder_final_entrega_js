@@ -194,6 +194,7 @@ function eliminarProductoDelCarrito() {
 }
 
 /* USO DE DOLAR API */
+/* USO de async await */
 let dolarApi = "https://dolarapi.com/v1/dolares/tarjeta"
 let misProductosDolar
 
@@ -224,6 +225,7 @@ let flagPeso //Usado para validar si la tienda se encuentra en pesos
 
 let btnUSA = document.querySelector(".usa")
 btnUSA.addEventListener("click", () => {
+    //sintaxis avanzada
     flagDolar ? sweetAlert("Ya se encuentra en dolar","info") : perdirDatos();
     
 })
